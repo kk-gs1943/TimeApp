@@ -1,0 +1,950 @@
+/* CSS Document */
+
+/* DSEG14 Classic Font */
+@font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('fonts/DSEG14Classic-Bold.woff') format('woff');
+}
+
+/* --------------------------------
+    Start All
+--------------------------------- */
+  
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+}
+
+.DSEG14-Classic {
+    font-family: 'DSEG14-Classic';
+    font-weight: bold;
+    color: #fff;
+}
+
+/* --------------------------------
+    End All
+--------------------------------- */
+
+/* --------------------------------
+    Start ハンバーガーメニュー 
+--------------------------------- */
+
+#header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+}
+
+.headerNavOuter {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.headerNav {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    padding-top: 40px;
+    background-color: rgba(0, 255, 100, 1.0);
+    transition: all .6s;
+    z-index: 20;
+    overflow-y: auto;
+}
+
+.navList {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+
+.navItem {
+    padding: 1rem 1rem 0;
+}
+
+.navItem a {
+    display: block;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    padding: 4rem 0 1rem;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ハンバーガーボタン */
+
+.hamburger_btn {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 30;
+    background: rgba(52, 58, 64, .5);
+    border-radius: .25rem;
+    display: none;
+}
+
+.hamburger_line {
+    position: absolute;
+    left: 15px;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: all .6s;
+}
+
+.hamburger_line_1 {
+    top: 20px;
+}
+
+.hamburger_line_2 {
+    top: 26px;
+}
+
+.hamburger_line_3 {
+    top: 32px;
+}
+
+/*  ハンバーガーメニューの背景  */
+
+.black-bg {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+    cursor: pointer;
+}
+
+/* ハンバーガーボタンをクリックした時の動き */
+/* ナビゲーションが現れる */
+
+.nav-open .headerNav {
+    right: 0;
+}
+
+/* 半透明の背景を表示 */
+
+.nav-open .black-bg {
+    opacity: .8;
+    visibility: visible;
+}
+
+/* 三本線のハンバーガーを x にする */
+
+.nav-open .hamburger_line_1 {
+    transform: rotate(45deg);
+    top: 25px;
+}
+
+.nav-open .hamburger_line_2 {
+    width: 0;
+    left: 50%;
+}
+
+.nav-open .hamburger_line_3 {
+    transform: rotate(-45deg);
+    top: 25px;
+}
+
+/* --------------------------------
+    End ハンバーガーメニュー 
+--------------------------------- */
+
+/* --------------------------------
+    Start Tab
+--------------------------------- */
+
+.tab-group {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.tabs_menu {
+    float: left;
+    width: 4rem;
+	height: 100%;
+}
+
+.tabs_menu, .tabs_menu * {
+	box-sizing: border-box;
+}
+
+.tabs_menu > input[type='radio'] {
+	appearance: none;
+	display: none;
+}
+
+.tabs_menu > input[type='radio']:checked + label {
+	background: #222;
+}
+
+.tabs_menu > input[type='radio']:checked + label:before {
+    transform: translate(0, -50%);
+    transform: translate3d(0, -50%, 0);
+    transition: transform 0.35s;
+}
+
+.tabs_menu > input[type='radio']:checked + label:after {
+	color: #fff;
+}
+
+.tabs_menu > label {
+	border: none;
+	padding: 0;
+	background: none;
+	outline: none;
+	border-radius: 0;
+	transition: background-position 0.25s, box-shadow 0.25s;
+	position: relative;
+	float: left;
+	width: 87%;
+	height: 25%;
+	text-align: center;
+	line-height: 19vh;
+	margin: 0;
+	background: rgba(0, 255, 100, 1.0);
+	box-shadow: inset 0px 1px 0 #fff, inset -1px 0 0px 0px #fff;
+    text-align: center;
+}
+
+.tabs_menu > label:first-of-type {
+	box-shadow: inset -1px 0 0px 0px #fff;
+}
+
+.tabs_menu > label:after {
+	content: attr(data-text);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: inline-block;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
+    transition: color 0.25s;
+    font-size: 0.5rem;
+}
+
+.tabs_menu > label:before {
+	content: '';
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 1rem;
+	border-color: transparent transparent transparent #fff;
+    transform: translate(-5.5rem, -50%);
+    transform: translate3d(-5.5rem, -50%, 0);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.tabs_menu > .tabs_cont {
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	left: 4rem;
+	text-align: center;
+    transition: transform 0.5s;
+}
+
+.tabs_menu > .tabs_cont > .card {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: inline-block;
+	width: 97%;
+	max-height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+    transform: translate(-50%, -50%) translate(-1.5rem, 0);
+    transform: translate3d(-50%, -50%, 0) translate3d(-1.5rem, 0, 0);
+}
+
+.tabs_menu > .tabs_cont > .card > h1 {
+	margin-top: 0;
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(1):checked ~ .tabs_cont:nth-of-type(1) {
+    transform: translate(0, 0%);
+    transform: translate3d(0, 0%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(1):checked ~ .tabs_cont:nth-of-type(2) {
+    transform: translate(0, 100%);
+    transform: translate3d(0, 100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(1):checked ~ .tabs_cont:nth-of-type(3) {
+    transform: translate(0, 200%);
+    transform: translate3d(0, 200%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(1):checked ~ .tabs_cont:nth-of-type(4) {
+    transform: translate(0, 300%);
+    transform: translate3d(0, 300%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(2):checked ~ .tabs_cont:nth-of-type(1) {
+    transform: translate(0, -100%);
+    transform: translate3d(0, -100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(2):checked ~ .tabs_cont:nth-of-type(2) {
+    transform: translate(0, 0%);
+    transform: translate3d(0, 0%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(2):checked ~ .tabs_cont:nth-of-type(3) {
+    transform: translate(0, 100%);
+    transform: translate3d(0, 100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(2):checked ~ .tabs_cont:nth-of-type(4) {
+    transform: translate(0, 200%);
+    transform: translate3d(0, 200%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(3):checked ~ .tabs_cont:nth-of-type(1) {
+    transform: translate(0, -200%);
+    transform: translate3d(0, -200%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(3):checked ~ .tabs_cont:nth-of-type(2) {
+    transform: translate(0, -100%);
+    transform: translate3d(0, -100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(3):checked ~ .tabs_cont:nth-of-type(3) {
+    transform: translate(0, 0%);
+    transform: translate3d(0, 0%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(3):checked ~ .tabs_cont:nth-of-type(4) {
+    transform: translate(0, 100%);
+    transform: translate3d(0, 100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(4):checked ~ .tabs_cont:nth-of-type(1) {
+    transform: translate(0, -300%);
+    transform: translate3d(0, -300%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(4):checked ~ .tabs_cont:nth-of-type(2) {
+    transform: translate(0, -200%);
+    transform: translate3d(0, -200%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(4):checked ~ .tabs_cont:nth-of-type(3) {
+    transform: translate(0, -100%);
+    transform: translate3d(0, -100%, 0);
+}
+
+.tabs_menu > input[type='radio']:nth-of-type(4):checked ~ .tabs_cont:nth-of-type(4) {
+    transform: translate(0, 0%);
+    transform: translate3d(0, 0%, 0);
+}
+
+/* --------------------------------
+    End Tab
+--------------------------------- */
+
+/* --------------------------------
+    Start  Home
+--------------------------------- */
+
+#wrapper {
+    background: url(./img/TimeApp-home.jpg) center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.title h2 {
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+    font-size: 4.8rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.title-text {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* --------------------------------
+    End Home
+--------------------------------- */
+
+/* --------------------------------
+    Start Timer
+--------------------------------- */
+
+.player-wrapper {
+    height: 100vh;
+}
+
+.vid-container video {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -10;
+}
+
+.player-container {
+    width: 100%;
+    height: 50vh;
+}
+
+.player-timer {
+    position: relative;
+    height: 50vh;
+}
+
+.track-outline, .moving-outline {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    height: 190px;
+    width: 190px;
+}
+
+.play {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-54%, -50%);
+}
+
+.replay {
+    position: absolute;
+    top: 70%;
+    left: 65%;
+    transform: translate(-54%, -50%);
+}
+
+.time-display {
+    font-size: 4rem;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #222, -1px 1px 0 #222, 1px -1px 0 #222, -1px -1px 0 #222;
+}
+
+.select {
+    padding: 0 3rem;
+}
+
+.select p {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #222, -1px 1px 0 #222, 1px -1px 0 #222, -1px -1px 0 #222;
+    margin: 0;
+}
+
+.time-select {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.time-select button {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 52px;
+}
+
+.three-min {
+    border-radius: 10px 0 0 10px;
+}
+
+.ten-min {
+    border-radius: 0 10px 10px 0;
+}
+
+.time-select button:after{
+    width: 100%;
+    height: 0;
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background : #fff;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(54deg);
+    transition: .2s;
+    z-index: -1;
+}
+
+.time-select button:hover{
+    color: #222;
+}
+
+.time-select button:hover:after{
+    height: 240%;
+    opacity: 1;
+}
+
+.time-select button:active:after{
+    height: 340%;
+    opacity: 1;
+}
+
+.soundList {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.soundList-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.soundList-item:hover {
+    background-color: #222;
+}
+
+.soundList-btn {
+    display: flex;
+}
+
+.soundList-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.soundList-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1rem;
+    color: #fff;  
+}  
+
+.soundList-title {
+  font-size: .8rem;
+  font-weight: bold;
+  display: block;
+}
+
+.soundList-description {
+  font-size: 0.6rem;
+  display: block;
+  color: #c7c7c7;
+}
+
+/* --------------------------------
+    End Timer
+--------------------------------- */
+
+/* --------------------------------
+    Start Clock
+--------------------------------- */
+
+.clock-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    background: url(./img/clock.jpg) center center;
+}
+
+/* Date */
+.clock-date {
+    text-align: center;
+}
+
+/* Time */
+.time {
+    display: flex;
+    margin-left: 5vw;
+}
+
+.clock-time {
+    font-size: 21vw;
+    margin: 0;
+}
+
+.clock-sec {
+    z-index: 10;
+    margin: 0;
+    font-size: 7vw;
+    padding-top: 13vw;
+}
+
+/* --------------------------------
+    End Clock
+--------------------------------- */
+
+/* --------------------------------
+    Start Stopwatch
+--------------------------------- */
+
+.stopwatch-wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: url(./img/stopwatch.jpg) center center;
+}
+
+/* Time */
+.stopwatch-count {
+    font-size: 13vw;
+}
+
+/* Button */
+.control {
+    display: flex;
+    justify-content: center;
+}
+
+#start,
+#timeout,
+#reset {
+    font-size: 4vw;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #222;
+    background-color: #222;
+    padding: 1vw;
+    margin: 3vw 1vw 0;
+    width: 20vw;
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+}
+
+#start:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+#timeout:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+#reset:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+/* --------------------------------
+    End Stopwatch
+--------------------------------- */
+
+/* --------------------------------
+    Start Footer
+--------------------------------- */
+
+#footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer .copyright {
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+/* --------------------------------
+    End Footer
+--------------------------------- */
+
+/* --------------------------------
+    Start Media Queries
+--------------------------------- */
+
+@media not all and (min-width: 960px) {
+    /* Tab */  
+    .tabs_menu {
+        font-size: 1.5rem;
+    }
+
+    .tabs_menu label i {
+        margin: 4.5rem 0;
+    }
+
+    .tabs_menu > label {
+        width: 81%;
+    }
+
+    .tabs_menu > label:after {
+        font-size: 0;
+    }
+}
+
+@media not all and (min-width: 769px) {
+    /* Timer */  
+    .soundList-image {
+        width: 35px;
+        height: 35px;
+    }    
+
+    .track-outline, .moving-outline {
+        top: 40%;
+        width: 180px;
+        height: 180px;
+    }
+
+    .play {
+        top: 40%;
+    }
+}
+
+@media not all and (min-width: 520px) {
+    /* Hamburger btn */
+    .hamburger_btn {
+        display: block;
+    }
+
+    /* Tab */  
+    .tabs_menu label {
+        display: none;
+    }
+
+    .tabs_menu > .tabs_cont > .card {
+        width: 105%;
+        left: 56.5%;
+    }
+
+    .tabs_menu > .tabs_cont {
+        left: 0;
+    }
+
+    /* Home */
+    .title h2 {
+        font-size: 3.4rem;
+    }
+
+    .title-text p {
+        font-size: 0.8rem;
+    }
+
+    /* Timer */
+    .vid-container video {
+        min-height: 101%;
+    }
+
+    .track-outline, .moving-outline {
+        height: 145px;
+        width: 145px;
+    }
+
+    .replay {
+        top: 60%;
+    }
+
+    .time-display {
+        font-size: 4rem;
+    }
+
+    .select p {
+        font-size: 0.7rem;
+    }
+
+    .time-select {
+        padding: 0;
+    }
+
+    .time-select button {
+        font-size: 0.76rem
+    } 
+
+    .time-select button::after {
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .soundList {
+        flex-direction: column;
+    }
+
+    .soundList-item {
+        width: 100%;
+    }
+
+    .soundList-image {
+        width: 25px;
+        height: 25px;
+        margin: 0.2rem 1rem;
+        padding: 0;
+    }
+
+    .soundList-title {
+        font-size: 2vh;
+    }
+
+}
+
+/* Smartphone landscape */
+@media (orientation: landscape) and (max-height: 414px) {
+    /* Hamburger btn */
+    .hamburger_btn {
+        display: block;
+    }
+
+    .navItem a {
+        padding: 0;
+    }
+
+    /* Tab */  
+    .tabs_menu label {
+        display: none;
+    }    
+
+    .tabs_menu > .tabs_cont  {
+        left: 0;
+    }
+
+    .tabs_menu > .tabs_cont > .card {
+        left: 55%;
+        width: 104%;
+    } 
+
+    /* Timer */
+    .track-outline, .moving-outline {
+        top: 67%;
+        width: 170px;
+        height: 170px;
+    }
+
+    .play {
+        top: 67%;
+    }
+
+    .replay {
+        left: 120%;
+    }
+
+    .time-display {
+        top: 90%;
+    }
+
+    .select p {
+        display: none;
+    }
+
+    .time-select {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+        display: block;
+        padding: 0;
+        width: 16%;
+    }
+
+    .time-select button {
+        line-height: 30px;
+        width: 100%;
+        font-size: 12px;
+        padding: 0.3rem 0;
+        margin: 0.3rem 0;
+    }
+
+    .time-select button:hover {
+        background-color: #fff;
+        color: #222;
+    }
+
+    .time-select button:after {
+        display: none;
+    }
+
+    .three-min, .five-min, .ten-min {
+        border-radius: 10px;
+    }
+
+    .soundList {
+        display: block;
+        position: absolute;
+        bottom: 20%;
+        left: 6%;
+        width: 16%;
+    }
+
+    .soundList-item {
+        width: 100%;
+        margin: 0.3rem 0;
+    }
+
+    .soundList-btn {
+        padding: 0.3rem 0;
+    }
+
+    .soundList-image {
+        display: none;
+    }
+
+    .soundList-text {
+        padding: 0 1rem;
+    }
+}
+/* --------------------------------
+    End Media Queries 
+--------------------------------- */

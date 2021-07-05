@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
+    <title>Tab</title>
+</head>
+<body>
+    <header id="header">
+        <!-- ハンバーガーメニュー -->
+        <div class="headerNavOuter">
+            <nav class="headerNav">
+                <!-- ナビゲーション -->
+                <ul class="navList">
+                    <li class="navItem"><a href="#Home">Home</a></li>
+                    <li class="navItem"><a href="#Timer">Timer</a></li>
+                    <li class="navItem"><a href="#Clock">Clock</a></li>
+                    <li class="navItem"><a href="#Stopwatch">Stopwatch</a></li>
+                </ul>
+            </nav>
+
+            <!-- ハンバーガーボタン -->
+            <div class="hamburger_btn" id="js-hamburger">
+                <span class="hamburger_line hamburger_line_1"></span>
+                <span class="hamburger_line hamburger_line_2"></span>
+                <span class="hamburger_line hamburger_line_3"></span>
+            </div>
+
+            <!-- ハンバーガーメニュー背景 -->
+            <div class="black-bg" id="js-black-bg"></div>
+        </div>
+    </header>
+
+    <div class="tab-group">
+        <div class="tabs_menu">
+            <input checked id="rad1" name="rad" type="radio">
+            <label data-text="Home" for="rad1"><i class="fa fa-home" aria-hidden="true" style="color: #fff;"></i></label>
+            <input id="rad2" name="rad" type="radio">
+            <label data-text="Timer" for="rad2"><i class="fa fa-hourglass" style="color: #fff;"></i></label>
+            <input id="rad3" name="rad" type="radio">
+            <label data-text="Clock" for="rad3"><i class="far fa-clock" style="color: #fff;"></i></label>
+            <input id="rad4" name="rad" type="radio">
+            <label data-text="Stopwatch" for="rad4"><i class="fas fa-stopwatch" style="color: #fff;"></i></label>
+
+            <div class="tabs_cont">
+                <div id="Home" class="card">
+                    <!-- Home -->
+                    <div id="wrapper">
+                        <main id="main">
+                            <div class="title">
+                                <h2>TimeApp</h2>
+                            </div>
+                            <div class="title-text">
+                                <p>タイマー＋時計＋ストップウォッチWEBアプリ</p>
+                            </div>
+                        </main>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="tabs_cont">
+                <div id="Timer" class="card">
+                    <div class="player-wrapper">
+                        <!-- Video -->
+                        <div class="vid-container">
+                            <video loop>
+                                <source src="./video/Sea.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="player-container">
+                            <audio class="song">
+                                <source src="./sounds/Sea.mp3" />
+                            </audio>
+                            <div class="player-timer">
+                                <!-- Track outline -->
+                                <svg class="track-outline" width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="110" cy="110" r="108.5" stroke="white" stroke-width="3"/>
+                                </svg>
+                                <!-- Moving outline -->
+                                <svg class="moving-outline" width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="110" cy="110" r="108.5" stroke="#E7E7E7" stroke-width="3"/>
+                                </svg>
+                                <!-- Play svg -->
+                                <img src="./svg/play.svg" class="play">
+                                <!-- Replay svg -->
+                                <img src="./svg/replay.svg" class="replay">
+                                <!-- Time display -->
+                                <h1 class="time-display">0:00</h1>
+                            </div>      
+                        </div>
+                        <div class="select">        
+                            <!-- Time select -->
+                            <p>Time select</p>
+                            <div class="time-select">
+                                <button class="three-min" data-time="180">3 Minutes</button>
+                                <button class="five-min" data-time="300">5 Minutes</button>
+                                <button class="ten-min" data-time="600">10 Minutes</button>
+                            </div>
+                            <!-- Sound list -->
+                            <div class="sound-list">
+                                <p>Sound list</p>
+                                <div class="soundList">
+                                    <div class="soundList-item">
+                                        <div class="soundList-btn" data-sound="./sounds/Sea.mp3" data-video="./video/Sea.mp4" >
+                                            <img src="./img/Sea.jpg" alt="" class="soundList-image" />
+                                            <div class="soundList-text">
+                                                <span class="soundList-title">海</span>
+                                                <span class="soundList-description">Sound of Sea</span>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                    <div class="soundList-item">
+                                        <div class="soundList-btn" data-sound="./sounds/Rain.mp3" data-video="./video/Rain.mp4">
+                                            <img src="./img/Rain.jpg" alt="" class="soundList-image" />
+                                            <div class="soundList-text">
+                                                <span class="soundList-title">雨</span>
+                                                <span class="soundList-description">Sound of Rain</span>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                    <div class="soundList-item">
+                                        <div class="soundList-btn" data-sound="./sounds/Fire.mp3" data-video="./video/Fire.mp4">
+                                            <img src="./img/Fire.jpg" alt="" class="soundList-image" />
+                                            <div class="soundList-text">
+                                                <span class="soundList-title">焚火</span>
+                                                <span class="soundList-description">Sounds of Fire</span>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="tabs_cont">
+                <div id="Clock" class="card">
+                    <!-- Clock -->
+                    <div class="clock-wrapper">
+                        <div class="clock">
+                            <!-- Date -->
+                            <p class="clock-date DSEG14-Classic"></p>
+                            <!-- Time -->
+                            <div class="time">
+                                <p class="clock-time DSEG14-Classic"></p>
+                                <p class="clock-sec DSEG14-Classic"></p>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="tabs_cont">
+                <div id="Stopwatch" class="card">
+                    <!-- Stopwatch -->
+                    <div class="stopwatch-wrapper">
+                        <div class="stopwatch">
+                            <!-- Time -->
+                            <div id="timer" class="stopwatch-count DSEG14-Classic">00:00:000</div>
+                            <div class="control">
+                                <!-- btn -->
+                                <button id="start">START</button>
+                                <button id="timeout">STOP</button>
+                                <button id="reset">RESET</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>    
+    </div>
+    <footer id="footer">
+        <p class="copyright" lang="en">
+            ©️2021 Kohei Kanazawa All Right Reserved.
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const toggleNav = () => {
+            const body = document.body;
+            const hamburger = document.getElementById('js-hamburger');
+            const blackBg = document.getElementById('js-black-bg');
+
+            hamburger.addEventListener('click', () => {
+                body.classList.toggle('nav-open');
+            });
+            blackBg.addEventListener('click', () => {
+                body.classList.remove('nav-open');
+            });
+        }
+        toggleNav();
+    </script>
+    <script src="./JavaScript/timer.js"></script>
+    <script src="./JavaScript/clock.js"></script>
+    <script src="./JavaScript/stopwatch.js"></script>
+</body>
+</html>
