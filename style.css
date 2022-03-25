@@ -1,13 +1,12 @@
-/* CSS Document */
-
-/* DSEG14 Classic Font */
+/* ▼DSEG14 Classic Font */
 @font-face {
     font-family: 'DSEG14-Classic';
     src: url('fonts/DSEG14Classic-Bold.woff') format('woff');
 }
+/* ▲DSEG14 Classic Font */
 
 /* --------------------------------
-    Start All
+                ▼全体
 --------------------------------- */
   
 html, body {
@@ -26,11 +25,11 @@ html, body {
 }
 
 /* --------------------------------
-    End All
+                ▲全体
 --------------------------------- */
 
 /* --------------------------------
-    Start ハンバーガーメニュー 
+            ▼ヘッダー 
 --------------------------------- */
 
 #header {
@@ -43,11 +42,14 @@ html, body {
     z-index: 10;
 }
 
+/* ▼ハンバーガーメニュー */
 .headerNavOuter {
     margin-bottom: 0;
     position: relative;
 }
+/* ▲ハンバーガーメニュー */
 
+/* ▼ナビゲーション */
 .headerNav {
     position: fixed;
     right: -250px;
@@ -82,9 +84,9 @@ html, body {
     font-weight: bold;
     text-decoration: none;
 }
+/* ▲ナビゲーション */
 
-/* ハンバーガーボタン */
-
+/* ▼ハンバーガーボタン */
 .hamburger_btn {
     position: absolute;
     right: 12px;
@@ -118,9 +120,9 @@ html, body {
 .hamburger_line_3 {
     top: 32px;
 }
+/* ▲ハンバーガーボタン */
 
-/*  ハンバーガーメニューの背景  */
-
+/*  ▼ハンバーガーメニューの背景  */
 .black-bg {
     display: block;
     position: fixed;
@@ -135,23 +137,22 @@ html, body {
     transition: all .6s;
     cursor: pointer;
 }
+/*  ▲ハンバーガーメニューの背景  */
 
-/* ハンバーガーボタンをクリックした時の動き */
-/* ナビゲーションが現れる */
-
+/* ▼ハンバーガーボタンをクリックした時の動き */
 .nav-open .headerNav {
     right: 0;
 }
+/* ▲ハンバーガーボタンをクリックした時の動き */
 
-/* 半透明の背景を表示 */
-
+/* ▼半透明の背景を表示 */
 .nav-open .black-bg {
     opacity: .8;
     visibility: visible;
 }
+/* ▲半透明の背景を表示 */
 
-/* 三本線のハンバーガーを x にする */
-
+/* ▼三本線のハンバーガーを x にする */
 .nav-open .hamburger_line_1 {
     transform: rotate(45deg);
     top: 25px;
@@ -166,13 +167,14 @@ html, body {
     transform: rotate(-45deg);
     top: 25px;
 }
+/* ▲三本線のハンバーガーを x にする */
 
 /* --------------------------------
-    End ハンバーガーメニュー 
+            ▲ヘッダー 
 --------------------------------- */
 
 /* --------------------------------
-    Start Tab
+            ▼タブ
 --------------------------------- */
 
 .tab-group {
@@ -183,6 +185,7 @@ html, body {
 	overflow: hidden;
 }
 
+/* ▼タブメニュー */
 .tabs_menu {
     float: left;
     width: 4rem;
@@ -373,13 +376,14 @@ html, body {
     transform: translate(0, 0%);
     transform: translate3d(0, 0%, 0);
 }
+/* ▲タブメニュー */
 
 /* --------------------------------
-    End Tab
+            ▲タブ
 --------------------------------- */
 
 /* --------------------------------
-    Start  Home
+            ▼ホーム
 --------------------------------- */
 
 #wrapper {
@@ -416,11 +420,11 @@ html, body {
 }
 
 /* --------------------------------
-    End Home
+            ▲ホーム
 --------------------------------- */
 
 /* --------------------------------
-    Start Timer
+            ▼タイマー
 --------------------------------- */
 
 .player-wrapper {
@@ -446,6 +450,7 @@ html, body {
     height: 50vh;
 }
 
+/* ▼残り再生時間 */
 .track-outline, .moving-outline {
     position: absolute;
     top: 35%;
@@ -454,21 +459,27 @@ html, body {
     height: 190px;
     width: 190px;
 }
+/* ▲残り再生時間 */
 
+/* ▼再生ボタン */
 .play {
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-54%, -50%);
 }
+/* ▲再生ボタン */
 
+/* ▼リプレイボタン */
 .replay {
     position: absolute;
     top: 70%;
     left: 65%;
     transform: translate(-54%, -50%);
 }
+/* ▲リプレイボタン */
 
+/* ▼残り時間 */
 .time-display {
     font-size: 4rem;
     position: absolute;
@@ -479,7 +490,9 @@ html, body {
     font-weight: bold;
     text-shadow: 1px 1px 0 #222, -1px 1px 0 #222, 1px -1px 0 #222, -1px -1px 0 #222;
 }
+/* ▲残り時間 */
 
+/* ▼音楽設定 */
 .select {
     padding: 0 3rem;
 }
@@ -532,7 +545,9 @@ html, body {
     height: 340%;
     opacity: 1;
 }
+/* ▲音楽設定 */
 
+/* ▼音楽リスト */
 .soundList {
     display: flex;
     justify-content: space-evenly;
@@ -579,13 +594,14 @@ html, body {
   display: block;
   color: #c7c7c7;
 }
+/* ▲音楽リスト */
 
 /* --------------------------------
-    End Timer
+            ▲タイマー
 --------------------------------- */
 
 /* --------------------------------
-    Start Clock
+            ▼時計
 --------------------------------- */
 
 .clock-wrapper {
@@ -596,12 +612,13 @@ html, body {
     background: url(./img/clock.jpg) center center;
 }
 
-/* Date */
+/* ▼日付 */
 .clock-date {
     text-align: center;
 }
+/* ▲日付 */
 
-/* Time */
+/* ▼文字盤 */
 .time {
     display: flex;
     margin-left: 5vw;
@@ -618,13 +635,14 @@ html, body {
     font-size: 7vw;
     padding-top: 13vw;
 }
+/* ▲文字盤 */
 
 /* --------------------------------
-    End Clock
+            ▲時計
 --------------------------------- */
 
 /* --------------------------------
-    Start Stopwatch
+        ▼ストップウォッチ
 --------------------------------- */
 
 .stopwatch-wrapper {
@@ -635,12 +653,13 @@ html, body {
     background: url(./img/stopwatch.jpg) center center;
 }
 
-/* Time */
+/* ▼文字盤 */
 .stopwatch-count {
     font-size: 13vw;
 }
+/* ▲文字盤 */
 
-/* Button */
+/* ▼ボタン */
 .control {
     display: flex;
     justify-content: center;
@@ -677,13 +696,14 @@ html, body {
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
     border-bottom: none;
 }
+/* ▲ボタン */
 
 /* --------------------------------
-    End Stopwatch
+        ▲ストップウォッチ
 --------------------------------- */
 
 /* --------------------------------
-    Start Footer
+            ▼フッター
 --------------------------------- */
 
 #footer {
@@ -701,15 +721,17 @@ html, body {
 }
 
 /* --------------------------------
-    End Footer
+            ▲フッター
 --------------------------------- */
 
 /* --------------------------------
-    Start Media Queries
+            ▼メディアクエリ
 --------------------------------- */
 
+/* ▼横幅が960px以上でないとき */
 @media not all and (min-width: 960px) {
-    /* Tab */  
+
+    /* ▼タブ */
     .tabs_menu {
         font-size: 1.5rem;
     }
@@ -725,33 +747,48 @@ html, body {
     .tabs_menu > label:after {
         font-size: 0;
     }
+    /* ▲タブ */
+    
 }
+/* ▲横幅が960px以上でないとき */
 
+/* ▼横幅が769px以上でない */
 @media not all and (min-width: 769px) {
-    /* Timer */  
-    .soundList-image {
-        width: 35px;
-        height: 35px;
-    }    
 
+    /* ▼再生残り時間 */
     .track-outline, .moving-outline {
         top: 40%;
         width: 180px;
         height: 180px;
     }
+    /* ▲再生残り時間 */
 
+    /* ▼再生ボタン */
     .play {
         top: 40%;
     }
-}
+    /* ▲再生ボタン */
 
+    /* ▼音楽リスト */
+    .soundList-image {
+        width: 35px;
+        height: 35px;
+    }
+    /* ▲音楽リスト */
+
+}
+/* ▲横幅が769px以上でない */
+
+/* ▼横幅が520px以上でない */
 @media not all and (min-width: 520px) {
-    /* Hamburger btn */
+
+    /* ▼ハンバーガーボタン */
     .hamburger_btn {
         display: block;
     }
+    /* ▲ハンバーガーボタン */
 
-    /* Tab */  
+    /* ▼タブ */  
     .tabs_menu label {
         display: none;
     }
@@ -764,8 +801,9 @@ html, body {
     .tabs_menu > .tabs_cont {
         left: 0;
     }
+    /* ▲タブ */
 
-    /* Home */
+    /* ▼ホーム */
     .title h2 {
         font-size: 3.4rem;
     }
@@ -773,25 +811,34 @@ html, body {
     .title-text p {
         font-size: 0.8rem;
     }
+    /* ▲ホーム */
 
-    /* Timer */
+    /* ▼背景動画 */
     .vid-container video {
         min-height: 101%;
     }
+    /* ▲背景動画 */
 
+    /* ▼残り再生時間 */
     .track-outline, .moving-outline {
         height: 145px;
         width: 145px;
     }
+    /* ▲残り再生時間 */
 
+    /* ▼リプレイボタン */
     .replay {
         top: 60%;
     }
+    /* ▲リプレイボタン */
 
+    /* ▼残り時間 */
     .time-display {
         font-size: 4rem;
     }
+    /* ▲残り時間 */
 
+    /* ▼時間設定 */
     .select p {
         font-size: 0.7rem;
     }
@@ -807,7 +854,9 @@ html, body {
     .time-select button::after {
         transform: translateX(-50%) translateY(-50%);
     }
+    /* ▲時間設定 */
 
+    /* ▼音楽リスト */
     .soundList {
         flex-direction: column;
     }
@@ -826,24 +875,29 @@ html, body {
     .soundList-title {
         font-size: 2vh;
     }
+    /* ▲音楽リスト */
 
 }
+/* ▲横幅が520px以上でない */
 
-/* Smartphone landscape */
+/* ▼横向きで高さ414px以下のとき */
 @media (orientation: landscape) and (max-height: 414px) {
-    /* Hamburger btn */
-    .hamburger_btn {
-        display: block;
-    }
-
+    /* ▼ナビゲーション */
     .navItem a {
         padding: 0;
     }
+    /* ▲ナビゲーション */
 
-    /* Tab */  
+    /* ▼ハンバーガーボタン */
+    .hamburger_btn {
+        display: block;
+    }
+    /* ▲ハンバーガーボタン */
+
+    /* ▼タブ */  
     .tabs_menu label {
         display: none;
-    }    
+    }
 
     .tabs_menu > .tabs_cont  {
         left: 0;
@@ -852,27 +906,36 @@ html, body {
     .tabs_menu > .tabs_cont > .card {
         left: 55%;
         width: 104%;
-    } 
+    }
+    /* ▲タブ */
 
-    /* Timer */
+    /* ▼残り再生時間 */
     .track-outline, .moving-outline {
         top: 67%;
         width: 170px;
         height: 170px;
     }
+    /* ▲残り再生時間 */
 
+    /* ▼再生ボタン */
     .play {
         top: 67%;
     }
+    /* ▲再生ボタン */
 
+    /* ▼リプレイボタン */
     .replay {
         left: 120%;
     }
+    /* ▲リプレイボタン */
 
+    /* ▼残り時間 */
     .time-display {
         top: 90%;
     }
+    /* ▲残り時間 */
 
+    /* ▼時間設定 */
     .select p {
         display: none;
     }
@@ -906,7 +969,9 @@ html, body {
     .three-min, .five-min, .ten-min {
         border-radius: 10px;
     }
+    /* ▲時間設定 */
 
+    /* ▼音楽リスト */
     .soundList {
         display: block;
         position: absolute;
@@ -931,7 +996,11 @@ html, body {
     .soundList-text {
         padding: 0 1rem;
     }
+    /* ▲音楽リスト */
+
 }
+/* ▲横向きで高さ414px以下のとき */
+
 /* --------------------------------
-    End Media Queries 
+            ▲メディアクエリ
 --------------------------------- */

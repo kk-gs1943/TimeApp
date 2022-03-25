@@ -1,4 +1,3 @@
-//時計
 const clock = () => {
     const d = new Date(); //現在の日付・時刻の取得
     let year = d.getFullYear(); //年を取得
